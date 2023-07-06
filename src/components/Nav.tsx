@@ -4,13 +4,19 @@ import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {Route, getCurrentRouteKey, getRoute} from '@/routes'
 import {Locale, i18n} from '@/locales'
+import {useEffect, useState} from 'react'
 
 const Nav: React.FC<{locale: Locale; dict: {[key: string]: string}}> = ({
 	locale,
 	dict
 }) => {
 	const pathname = usePathname()
-	const activeRoute = getCurrentRouteKey(pathname, locale)
+	const [activeRoute, setActiveRoute] = useState<Route | null>(
+		getCurrentRouteKey(pathname, locale)
+	)
+	useEffect(() => {
+		setActiveRoute(getCurrentRouteKey(pathname, locale))
+	}, [pathname, locale])
 	const navKeys = Object.keys(dict) as (keyof typeof dict)[]
 	return (
 		<nav className="flex items-center justify-between flex-wrap p-6">
