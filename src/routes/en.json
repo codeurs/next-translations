@@ -1,0 +1,6 @@
+{
+	"/:locale/fruit/apple": "/:locale/fruit/apple",
+	"/:locale/fruit/banana": "/:locale/fruit/banana",
+	"/:locale/fruit/grape": "/:locale/fruit/grape",
+	"/:locale/vegetables/carrot": "/:locale/vegetables/carrot"
+}

@@ -1,0 +1,6 @@
+{
+	"/:locale/fruit/apple": "/:locale/fruit/appel",
+	"/:locale/fruit/banana": "/:locale/fruit/banaan",
+	"/:locale/fruit/grape": "/:locale/fruit/druif",
+	"/:locale/vegetables/carrot": "/:locale/groenten/wortel"
+}
