@@ -5,11 +5,9 @@ import {usePathname} from 'next/navigation'
 import {Route, getCurrentRouteKey, getRoute} from '@/routes'
 import {Locale, i18n} from '@/locales'
 import {useEffect, useState} from 'react'
+import type {Dictionary} from '@/locales/dictionaries'
 
-const Nav: React.FC<{locale: Locale; dict: {[key: string]: string}}> = ({
-	locale,
-	dict
-}) => {
+const Nav: React.FC<{locale: Locale; dict: Dictionary}> = ({locale, dict}) => {
 	const pathname = usePathname()
 	const [activeRoute, setActiveRoute] = useState<Route | null>(
 		getCurrentRouteKey(pathname, locale)
